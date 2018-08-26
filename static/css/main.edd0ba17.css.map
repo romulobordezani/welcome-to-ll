@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/styles/index.css"],"names":[],"mappings":"AAAA,KACE,SACA,UACA,gCAAqC","file":"static/css/main.edd0ba17.css","sourcesContent":["body {\n  margin: 0;\n  padding: 0;\n  font-family: \"Comfortaa\", sans-serif;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/assets/styles/index.css"],"sourceRoot":""}
