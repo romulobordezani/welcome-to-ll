@@ -1,0 +1,28 @@
+.search-form {
+
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 120px;
+
+  &__label {
+    padding: 20px;
+  }
+
+  &__input {
+    input{
+      padding: 6px;
+    }
+  }
+
+  &__submit-button {
+    padding: 20px;
+    button{
+      border: 1px solid #333333;
+      padding: 6px;
+      background: #c0c0c0;
+    }
+
+  }
+}

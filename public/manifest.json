@@ -1,7 +1,7 @@
 {
-  "short_name": "CEP Search",
-  "name": "CEP Search",
-  "description": "This app lists CEPs in a Google maps.",
+  "short_name": "Consulta de endereço",
+  "name": "Consulta de endereço",
+  "description": "App para listar CEPs no Google maps.",
   "dir": "rtl",
   "lang": "en-US",
   "icons": [
@@ -23,6 +23,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#333333",
   "background_color": "#ffffff"
 }

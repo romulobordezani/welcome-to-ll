@@ -8,7 +8,9 @@ class NotFound extends Component {
   render() {
     return (
       <div>
-        <p> Ooops. Not found route... 404</p>
+        <h1>404</h1>
+        <p> Ooops. This page isn&apos;t available, but I&apos;m...</p>
+        <p> Please, hire me :)</p>
       </div>
     );
   }
