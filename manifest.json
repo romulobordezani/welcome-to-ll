@@ -1,6 +1,9 @@
 {
   "short_name": "CEP Search",
   "name": "CEP Search",
+  "description": "This app lists CEPs in a Google maps.",
+  "dir": "rtl",
+  "lang": "en-US",
   "icons": [
     {
       "src": "favicon.png",
