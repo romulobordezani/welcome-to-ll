@@ -1,6 +1,6 @@
 Welcome to L.L. is a simple code test to list CEPs (Brazilian Zipcodes) in a map using React, Redux and Google Maps.
 
-Yarn was used in the whole process, so I recommend you to do the same to avoid conflicts with Npm. 
+Live version available at: https://romulobordezani.github.io/welcome-to-ll/
 
 # How to Install
 ```bash
@@ -12,6 +12,9 @@ yarn install
 ```bash
 yarn start
 ```
+
+You can access it locally at: [http://localhost:3000/](http://localhost:3000/)
+
 
 # How to Test
 ```bash
