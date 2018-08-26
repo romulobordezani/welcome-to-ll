@@ -56,7 +56,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build-access": "cd ./docs; npx live-server",
+    "serve-build": "cd ./docs; npx live-server",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "test": "node scripts/test.js --env=jsdom",

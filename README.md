@@ -21,9 +21,9 @@ You can access it locally at: [http://localhost:3000/](http://localhost:3000/)
 yarn test
 ```
 
-# How to Build
+# How to Deploy
 ```bash
-yarn build
+yarn run deploy
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and the original Read-me file was kept as [CRA_README.md](CRA_README.md)
