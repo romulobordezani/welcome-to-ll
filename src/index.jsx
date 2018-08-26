@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import Routes from './routes';
 import reducers from './reducers';
 
-import './assets/styles/index.css';
+import './assets/styles/index.scss';
 import registerServiceWorker from './registerServiceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
