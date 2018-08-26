@@ -53,7 +53,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js; cd ./docs; npx live-server",
     "test": "node scripts/test.js --env=jsdom",
     "prettify": "node_modules/.bin/prettier --print-width 120 \"{server,src}/**/*.js\" --write",
     "lint": "node_modules/.bin/eslint \"{server,src}/**/*.js\""
