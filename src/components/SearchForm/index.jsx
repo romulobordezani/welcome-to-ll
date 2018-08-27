@@ -17,7 +17,9 @@ class SearchForm extends Component {
           <input type="text" placeholder="02050-010" />
         </div>
         <div className={styles['search-form__submit-button']}>
-          <button type="submit">Buscar</button>
+          <button type="submit" className="btn-mgl btn-green">
+            Buscar
+          </button>
         </div>
       </form>
     );

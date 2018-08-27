@@ -1,5 +1,6 @@
-@import "normalize";
-
-body {
-  font-family: "Comfortaa", sans-serif;
+:global {
+  @import "normalize";
+  @import "fonts";
+  @import "colors";
+  @import "form";
 }

@@ -1,13 +1,17 @@
 .search-form {
 
-  background: #e8e8e8;
+  background: #f2f2f2;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
-  height: 120px;
+  height: 70px;
+  font-size: 0.8em;
+  z-index: 1;
 
   &__label {
-    padding: 20px;
+    padding: 6px;
+    align-content: end;
   }
 
   &__input {
@@ -17,12 +21,7 @@
   }
 
   &__submit-button {
-    padding: 20px;
-    button{
-      border: 1px solid #333333;
-      padding: 6px;
-      background: #c0c0c0;
-    }
-
+    padding: 6px;
+    align-content: start;
   }
 }

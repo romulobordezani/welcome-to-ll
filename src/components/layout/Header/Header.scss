@@ -1,26 +1,42 @@
 .header {
-
-  background: #333333;
+  background: #0083ca;
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 70px;
-  box-shadow: 0 2px 9px -1px rgba(0,0,0,0.53);
+  height: 90px;
+  box-shadow: 0 4px 9px -1px rgba(0,0,0,0.53);
+  z-index: 3;
+  position: relative;
+
+  &:after{
+    content: "";
+    background: #02659B url("./strip-multi-colors.png");
+    background-size: contain;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
 
   &__logo {
-
     flex: 0 1 auto;
-    margin: 0 10px;
-
+    margin: 0 20px 0 0;
     img {
-      max-height: 50px;
+      max-height: 80px;
     }
 
   }
 
   &__logotype {
-    align-items: flex-start;
-    color: #CCCCCC;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.1em;
+
+    @media( max-width: 320px ){
+      font-size: 1em;
+    }
   }
 
 }

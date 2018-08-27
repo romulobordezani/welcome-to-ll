@@ -16,6 +16,9 @@ class Home extends Component {
         <Header />
         <SearchForm />
         <Map />
+        <Map />
+        <Map />
+        <Map />
       </div>
     );
   }
