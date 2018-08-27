@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import cep from './cep';
+import address from './address';
 
 export default combineReducers({
-  cep
+  address
 });

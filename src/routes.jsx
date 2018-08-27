@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './components/App';
+import App from './components/App/index.container';
 import NotFound from './components/NotFound';
 
 export default () => {
   return (
     <Switch>
-      <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
+      <Route path={`${process.env.PUBLIC_URL}/`} exact component={App} />
       <Route component={NotFound} />
     </Switch>
   );

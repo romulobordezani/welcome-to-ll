@@ -7,10 +7,11 @@
   box-shadow: 0 4px 9px -1px rgba(0,0,0,0.53);
   z-index: 3;
   position: relative;
+  opacity: 0; /* << Bring it back */
 
   &:after{
     content: "";
-    background: #02659B url("./strip-multi-colors.png");
+    background: #02659B url("images/strip-multi-colors.png");
     background-size: contain;
     height: 4px;
     width: 100%;

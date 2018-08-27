@@ -1,3 +1,3 @@
-// CEP
-export const ADD_CEP = 'ADD_CEP';
-export const REMOVE_CEP = 'REMOVE_CEP';
+// ADDRESS
+export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const REMOVE_ADDRESS = 'REMOVE_ADDRESS';
