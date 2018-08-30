@@ -17,3 +17,5 @@ class NotFound extends Component {
 }
 
 export default NotFound;
+
+// TODO > This 404 page could be prettier and have a link to the app home...

@@ -5,16 +5,23 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 70px;
+  height: 90px;
   font-size: 0.8em;
   z-index: 1;
+  $lineHeight: 80px;
+
+/*  div{ background-color: #02659B;}*/
 
   &__label {
     padding: 6px;
     align-content: end;
+    min-height: $lineHeight;
   }
 
   &__input {
+    padding: 6px;
+    align-content: end;
+    min-height: $lineHeight;
     input{
       padding: 6px;
     }
@@ -23,5 +30,16 @@
   &__submit-button {
     padding: 6px;
     align-content: start;
+    min-height: $lineHeight;
   }
+
+  &--error{
+    $errorColor: red;
+    color: $errorColor;
+    input{
+      border: $errorColor 1px solid;
+    }
+  }
+
 }
+

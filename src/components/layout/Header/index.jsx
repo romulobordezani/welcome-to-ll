@@ -20,3 +20,5 @@ class Header extends Component {
 }
 
 export default Header;
+
+// TODO > What about a stick header?

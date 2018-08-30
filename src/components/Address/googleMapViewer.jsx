@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 const GOOGLE_MAPS_API_KEY = 'AIzaSyAOJktD5jQocFOCM6SBjW3iMAWqI4afS7E';
 
+const defaultMapOptions = {
+  disableDefaultUI: true
+};
+
 class GoogleMapViewer extends Component {
   constructor(props) {
     super(...props);
@@ -13,7 +17,11 @@ class GoogleMapViewer extends Component {
     const { locale } = this.props;
     const GoogleMapInstance = withScriptjs(
       withGoogleMap(() => (
-        <GoogleMap defaultCenter={{ lat: locale.lat, lng: locale.lng }} defaultZoom={13}>
+        <GoogleMap
+          defaultCenter={{ lat: locale.lat, lng: locale.lng }}
+          defaultZoom={13}
+          defaultOptions={defaultMapOptions}
+        >
           <Marker position={{ lat: locale.lat, lng: locale.lng }} />
         </GoogleMap>
       ))

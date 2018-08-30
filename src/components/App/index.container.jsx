@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from './App.scss';
 
+// > Components
 import Header from '../layout/Header';
-import SearchForm from '../SearchForm';
+import SearchAddressForm from '../SearchAddressForm';
 import Address from '../Address';
+
+// > Actions
+import getAddressByCep from '../../actions/address';
 
 class App extends Component {
   constructor(props) {
@@ -13,12 +16,12 @@ class App extends Component {
   }
 
   render() {
-    const { address } = this.props;
+    const { address, searchAddressByCep } = this.props;
     const { list: addressList } = address;
     return (
-      <div className={styles.App}>
+      <div>
         <Header />
-        <SearchForm />
+        <SearchAddressForm searchAddressByCep={searchAddressByCep} />
         {addressList.map(locale => {
           return <Address key={locale.cep} locale={locale} />;
         })}
@@ -28,7 +31,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  address: PropTypes.any.isRequired
+  address: PropTypes.any.isRequired,
+  searchAddressByCep: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -37,7 +41,11 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = {
+  searchAddressByCep: getAddressByCep
+};
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(App);
