@@ -1,5 +1,4 @@
-import { SEARCH_ADDRESS } from '../constants/actionTypes';
+import { SEARCH_ADDRESS, RESET_ERRORS_ADDRESS } from '../constants/actionTypes';
 
-const getAddressByCep = cep => ({ type: SEARCH_ADDRESS, cep });
-
-export default getAddressByCep;
+export const getAddressByCep = cep => ({ type: SEARCH_ADDRESS, cep });
+export const resetErrors = () => ({ type: RESET_ERRORS_ADDRESS });

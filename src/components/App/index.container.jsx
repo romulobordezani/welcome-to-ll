@@ -8,7 +8,7 @@ import SearchAddressForm from '../SearchAddressForm';
 import Address from '../Address';
 
 // > Actions
-import getAddressByCep from '../../actions/address';
+import { getAddressByCep, resetErrors } from '../../actions/address';
 
 class App extends Component {
   constructor(props) {
@@ -16,12 +16,16 @@ class App extends Component {
   }
 
   render() {
-    const { address, searchAddressByCep } = this.props;
+    const { address, searchAddressByCep, handleResetErrors } = this.props;
     const { list: addressList } = address;
     return (
       <div>
         <Header />
-        <SearchAddressForm searchAddressByCep={searchAddressByCep} />
+        <SearchAddressForm
+          address={address}
+          handleResetErrors={handleResetErrors}
+          searchAddressByCep={searchAddressByCep}
+        />
         {addressList.map(locale => {
           return <Address key={locale.cep} locale={locale} />;
         })}
@@ -32,7 +36,8 @@ class App extends Component {
 
 App.propTypes = {
   address: PropTypes.any.isRequired,
-  searchAddressByCep: PropTypes.func.isRequired
+  searchAddressByCep: PropTypes.func.isRequired,
+  handleResetErrors: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -42,7 +47,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  searchAddressByCep: getAddressByCep
+  searchAddressByCep: getAddressByCep,
+  handleResetErrors: resetErrors
 };
 
 export default connect(

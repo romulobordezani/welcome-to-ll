@@ -10,7 +10,7 @@ class SearchAddressForm extends Component {
     super(...props);
 
     this.state = {
-      cep: ''
+      cep: '02418-150'
     };
 
     this.handleSearchAddressByCep = this.handleSearchAddressByCep.bind(this);
@@ -48,13 +48,17 @@ class SearchAddressForm extends Component {
       cep: event.target.value,
       error: null
     });
+    const { handleResetErrors } = this.props;
+    handleResetErrors();
   }
 
   render() {
+    const { address } = this.props;
     const { cep, error } = this.state;
+
     return (
       <form
-        className={`${error ? styles['search-form--error'] : ''} ${styles['search-form']}`}
+        className={`${styles['search-form']} ${error || address.errors.length > 0 ? styles['search-form--error'] : ''}`}
         onSubmit={this.handleSearchAddressByCep}
       >
         <div className={styles['search-form__label']}>
@@ -70,6 +74,13 @@ class SearchAddressForm extends Component {
             onChange={this.updateCepInput}
           />
           {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
+          {address.errors.map(error_ => {
+            return (
+              <div key={`${error_} ${Math.random()}`} className={styles['search-form__input__error-label']}>
+                {error_}
+              </div>
+            );
+          })}
         </div>
         <div className={styles['search-form__submit-button']}>
           <button type="submit" className="btn-mgl btn-green">
@@ -82,7 +93,9 @@ class SearchAddressForm extends Component {
 }
 
 SearchAddressForm.propTypes = {
-  searchAddressByCep: PropTypes.func.isRequired
+  searchAddressByCep: PropTypes.func.isRequired,
+  handleResetErrors: PropTypes.func.isRequired,
+  address: PropTypes.any.isRequired
 };
 
 export default SearchAddressForm;
