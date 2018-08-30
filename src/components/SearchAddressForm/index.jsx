@@ -73,14 +73,16 @@ class SearchAddressForm extends Component {
             placeholder="02050-010"
             onChange={this.updateCepInput}
           />
-          {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
-          {address.errors.map(error_ => {
-            return (
-              <div key={`${error_} ${Math.random()}`} className={styles['search-form__input__error-label']}>
-                {error_}
-              </div>
-            );
-          })}
+          <div className={styles['search-form__alert-wrapper']}>
+            {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
+            {address.errors.map(errorContainer => {
+              return (
+                <div key={`${errorContainer} ${Math.random()}`} className={styles['search-form__input__error-label']}>
+                  {errorContainer}
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className={styles['search-form__submit-button']}>
           <button type="submit" className="btn-mgl btn-green">

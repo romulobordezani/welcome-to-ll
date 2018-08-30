@@ -1,37 +1,43 @@
 .search-form {
 
+  $formHeight: 100px;
   background: #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 90px;
+  height: $formHeight + 10;
   font-size: 0.8em;
   z-index: 1;
-  $lineHeight: 80px;
-
-/*  div{ background-color: #02659B;}*/
 
   &__label {
-    padding: 6px;
-    align-content: end;
-    min-height: $lineHeight;
-    opacity: 0;
+    padding: 36px 6px;
+    align-self: center;
+    label {
+      margin-top: 16px;
+    }
   }
 
   &__input {
-    padding: 6px;
+    padding: 36px 6px 0;
     align-content: end;
-    min-height: $lineHeight;
     input{
       padding: 6px;
+      outline: none;
     }
   }
 
   &__submit-button {
-    padding: 6px;
+    padding: 36px 6px;
     align-content: start;
-    min-height: $lineHeight;
+    button {
+      outline: none;
+    }
+  }
+
+  &__alert-wrapper{
+    margin: 5px 0 0 2px;
+    min-height: 30px;
   }
 
   &--error{

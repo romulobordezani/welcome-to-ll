@@ -69,8 +69,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "REACT_APP_ENVIRONMENT=dev node scripts/start.js",
+    "build": "REACT_APP_ENVIRONMENT=production  node scripts/build.js",
     "serve-build": "cd ./docs; npx live-server",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",

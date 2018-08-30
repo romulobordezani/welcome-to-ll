@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, withScriptjs, Marker } from 'react-google-maps';
 import PropTypes from 'prop-types';
+import config from '../../config';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyAOJktD5jQocFOCM6SBjW3iMAWqI4afS7E';
+const GOOGLE_MAPS_API_KEY = config.google.maps_key;
 
 const defaultMapOptions = {
   disableDefaultUI: true

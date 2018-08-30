@@ -2,15 +2,18 @@ import { takeLatest, call, put, select } from 'redux-saga/effects';
 import axios from 'axios';
 import fetchJsonp from 'fetch-jsonp';
 import { getOnlyDigits } from '../helpers';
+import config from '../config';
 
 import { ADD_ADDRESS, SEARCH_ADDRESS, NOT_FOUND_ADDRESS, LOADING_ADDRESS } from '../constants/actionTypes';
+
+const GOOGLE_MAPS_API_KEY = config.google.maps_key;
 
 function getGeocodeInfo(address, action) {
   return axios({
     method: 'get',
     url: `https://maps.google.com/maps/api/geocode/json?address=${action.cep},${address.logradouro},${
       address.localidade
-    }&sensor=false`
+    }&sensor=false&key=${GOOGLE_MAPS_API_KEY}`
   });
 }
 
@@ -25,7 +28,11 @@ function fetchCepInfo(action) {
     });
 }
 
-// Unfortunatelly these jsonp requests always return 200 and the not found error (404) is given inside of the OK response... Actually we could fetch and query by CEP directly from Google, but the test asked for a Jsonp usage ;)
+/* NOTE to appraisers: Unfortunately these jsonp requests always return 200 and
+   the NOT FOUND STATUS (404) is given inside of the OK response.
+   Actually, we could fetch and query by CEP directly from Google,
+   I just didn't because the test asked to use Jsonp ;)
+ */
 function addressNotFound(address) {
   const { erro: error } = address;
   return error;
@@ -48,7 +55,7 @@ function* searchAddressByCep(action) {
     const state = yield select();
     const isAnAlreadyListedCep = alreadyListed(state.address.list, action.cep);
     if (isAnAlreadyListedCep) {
-      throw new Error('CEP já listado.');
+      throw new Error('Já listado.');
     }
 
     yield put({ type: LOADING_ADDRESS });
@@ -56,7 +63,7 @@ function* searchAddressByCep(action) {
     const addressWithoutGeo = yield call(fetchCepInfo, action);
 
     if (addressNotFound(addressWithoutGeo)) {
-      throw new Error('CEP não encontrado.');
+      throw new Error('Não encontrado.');
     }
 
     const geoInfoFromGoogle = yield call(getGeocodeInfo, addressWithoutGeo, action);

@@ -32,11 +32,9 @@ class Address extends Component {
             onClick={() => {
               this.removeAddress(locale);
             }}
-          >
-            X
-          </button>
+          />
         </div>
-        <div className={styles.map}>
+        <div className={styles.map__viewer}>
           <GoogleMapViewer locale={locale} />
         </div>
       </div>

@@ -17,14 +17,23 @@
 
     &__street {
       font-size: 1.2em;
+      max-width: 90%;
     }
 
     &__close-button {
       position: absolute;
       right: 15px;
       top: 15px;
+      height: 20px;
+      width: 20px;
+      background: url("assets/close-icon.svg");
+      border: none;
     }
 
+  }
+
+  &__viewer {
+    min-height: 280px;
   }
 
 }
