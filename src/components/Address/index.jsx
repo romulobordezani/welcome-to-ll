@@ -9,6 +9,11 @@ class Address extends Component {
     super(...props);
   }
 
+  removeAddress(address) {
+    const { handleRemoveAddress } = this.props;
+    handleRemoveAddress(address);
+  }
+
   render() {
     const { locale } = this.props;
     const { cep, bairro, logradouro, localidade, uf } = locale;
@@ -21,7 +26,15 @@ class Address extends Component {
             {localidade} - {uf}
           </div>
           <div>{cep}</div>
-          <div className={styles['map__info-bar__close-button']}>X</div>
+          <button
+            type="button"
+            className={styles['map__info-bar__close-button']}
+            onClick={() => {
+              this.removeAddress(locale);
+            }}
+          >
+            X
+          </button>
         </div>
         <div className={styles.map}>
           <GoogleMapViewer locale={locale} />
@@ -38,7 +51,8 @@ Address.propTypes = {
     logradouro: PropTypes.string.isRequired,
     localidade: PropTypes.string.isRequired,
     uf: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  handleRemoveAddress: PropTypes.func.isRequired
 };
 
 export default Address;

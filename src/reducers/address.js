@@ -34,7 +34,8 @@ const address = (state = initialState, action) => {
 
     case REMOVE_ADDRESS: {
       return {
-        ...state
+        ...state,
+        list: state.list.filter(element => element !== action.address)
       };
     }
 

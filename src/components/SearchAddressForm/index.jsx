@@ -69,7 +69,7 @@ class SearchAddressForm extends Component {
             mask={cepMask}
             id="cep"
             value={cep}
-            type="text"
+            type="tel"
             placeholder="02050-010"
             onChange={this.updateCepInput}
           />
