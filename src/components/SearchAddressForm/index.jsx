@@ -10,12 +10,14 @@ class SearchAddressForm extends Component {
     super(...props);
 
     this.state = {
-      cep: '02418-150'
+      cep: ''
     };
 
     this.handleSearchAddressByCep = this.handleSearchAddressByCep.bind(this);
     this.updateCepInput = this.updateCepInput.bind(this);
     this.clearErrors = this.clearErrors.bind(this);
+
+    this.cepRef = React.createRef();
   }
 
   setErrorState(errorMessage) {
@@ -82,6 +84,9 @@ class SearchAddressForm extends Component {
             placeholder="02050-010"
             onChange={this.updateCepInput}
             onBlur={this.clearErrors}
+            onFocus={this.clearErrors}
+            ref={this.cepRef}
+            autoFocus
           />
           <div className={styles['search-form__alert-wrapper']}>
             {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
