@@ -9,6 +9,10 @@ class Address extends Component {
     super(...props);
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   removeAddress(address) {
     const { handleRemoveAddress } = this.props;
     handleRemoveAddress(address);

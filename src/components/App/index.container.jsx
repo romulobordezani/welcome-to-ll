@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 // > Components
 import Header from '../layout/Header';
@@ -9,6 +10,9 @@ import Address from '../Address';
 
 // > Actions
 import { getAddressByCep, resetErrors, removeAddress } from '../../actions/address';
+
+// > Style
+import styles from './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -26,9 +30,13 @@ class App extends Component {
           handleResetErrors={handleResetErrors}
           searchAddressByCep={searchAddressByCep}
         />
-        {addressList.map(locale => {
-          return <Address key={locale.cep} handleRemoveAddress={handleRemoveAddress} locale={locale} />;
-        })}
+        <TransitionGroup className={styles['addresses-wrapper']}>
+          {addressList.map(locale => (
+            <CSSTransition key={locale.cep} timeout={500} classNames="fade">
+              <Address handleRemoveAddress={handleRemoveAddress} locale={locale} />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
       </div>
     );
   }

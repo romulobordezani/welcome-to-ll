@@ -24,7 +24,7 @@ const address = (state = initialState, action) => {
 
     case ADD_ADDRESS: {
       const updatedAddressList = state.list;
-      updatedAddressList.push(action.payload);
+      updatedAddressList.unshift(action.payload);
       return {
         ...state,
         list: updatedAddressList,

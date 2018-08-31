@@ -1,39 +1,62 @@
 .map {
 
-  width: 90%;
-  margin: 40px auto;
+  width: 44%;
+  max-width: 44%;
+  min-width: 44%;
+  margin: 2% 3%;
   box-shadow: 0 4px 9px -1px rgba(0,0,0,0.53);
   background: #FFFFFF;
+  font-size: 0.9em;
 
-  &:first-of-type {
-    margin-top: 0;
+  @media (max-width: 420px) {
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    margin: 40px auto 0;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
 
+
+
   &__info-bar {
+
     padding: 20px;
     text-align: left;
     position: relative;
     clear: both;
 
     &__street {
-      font-size: 1.2em;
+      font-size: 1.1em;
       max-width: 90%;
+      font-weight: bold;
     }
 
     &__close-button {
       position: absolute;
       right: 15px;
       top: 15px;
-      height: 20px;
-      width: 20px;
+      height: 30px;
+      width: 30px;
       background: url("assets/close-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 15px 15px;
+      background-position: center;
+      background-color: #f8f8f8;
+      border-radius: 50%;
       border: none;
+      cursor: pointer;
+      outline: none;
     }
 
   }
 
   &__viewer {
-    min-height: 280px;
+    min-height: 260px;
   }
 
 }

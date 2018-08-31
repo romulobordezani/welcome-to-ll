@@ -6,8 +6,11 @@
   height: 90px;
   box-shadow: 0 4px 9px -1px rgba(0,0,0,0.53);
   z-index: 3;
-  position: relative;
-  opacity: 0; /*  << Bring it back */
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   &:after{
     content: "";
@@ -23,7 +26,7 @@
     flex: 0 1 auto;
     margin: 0 20px 0 0;
     img {
-      max-height: 80px;
+      max-height: 85px;
     }
 
   }

@@ -1,7 +1,9 @@
 .search-form {
 
   $formHeight: 100px;
-  background: #f2f2f2;
+  background: -moz-linear-gradient(top, rgba(242,242,242,1) 48%, rgba(242,242,242,0) 93%, rgba(242,242,242,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(242,242,242,1) 48%,rgba(242,242,242,0) 93%,rgba(242,242,242,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(242,242,242,1) 48%,rgba(242,242,242,0) 93%,rgba(242,242,242,0) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,9 +11,17 @@
   height: $formHeight + 10;
   font-size: 0.8em;
   z-index: 1;
+  margin-bottom: 30px;
+  transition: color 200ms ease;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
 
   &__label {
     padding: 36px 6px;
+    font-size: 1.3em;
+    font-weight: 300;
     align-self: center;
     label {
       margin-top: 16px;
@@ -29,7 +39,7 @@
 
   &__submit-button {
     padding: 36px 6px;
-    align-content: start;
+    align-content: center;
     button {
       outline: none;
     }

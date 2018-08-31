@@ -15,6 +15,7 @@ class SearchAddressForm extends Component {
 
     this.handleSearchAddressByCep = this.handleSearchAddressByCep.bind(this);
     this.updateCepInput = this.updateCepInput.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
   }
 
   setErrorState(errorMessage) {
@@ -52,6 +53,14 @@ class SearchAddressForm extends Component {
     handleResetErrors();
   }
 
+  clearErrors() {
+    const { handleResetErrors } = this.props;
+    handleResetErrors();
+    this.setState({
+      error: null
+    });
+  }
+
   render() {
     const { address } = this.props;
     const { cep, error } = this.state;
@@ -72,6 +81,7 @@ class SearchAddressForm extends Component {
             type="tel"
             placeholder="02050-010"
             onChange={this.updateCepInput}
+            onBlur={this.clearErrors}
           />
           <div className={styles['search-form__alert-wrapper']}>
             {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
