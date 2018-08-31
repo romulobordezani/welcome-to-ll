@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import styles from './NotFound.scss';
+import notFoundImage from './assets/notfound.png';
+import smile from './assets/smiling-face.png';
 
 class NotFound extends Component {
   constructor(props) {
@@ -7,15 +10,16 @@ class NotFound extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles['not-found-wrapper']}>
+        <img className={styles['not-found-wrapper__icon']} src={notFoundImage} alt="Not Found" />
         <h1>404</h1>
         <p> Ooops. This page isn&apos;t available, but I&apos;m...</p>
-        <p> Please, hire me :)</p>
+        <p>
+          Please, hire me <img className={styles['not-found-wrapper__smile']} src={smile} alt="Smile" />
+        </p>
       </div>
     );
   }
 }
 
 export default NotFound;
-
-// TODO > This 404 page could be prettier and have a link to the app home...

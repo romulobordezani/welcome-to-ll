@@ -8,7 +8,7 @@
   background: #FFFFFF;
   font-size: 0.9em;
 
-  @media (max-width: 424px) {
+  @media (max-width: 1024px) {
     width: 90%;
     max-width: 90%;
     min-width: 90%;
@@ -20,8 +20,6 @@
       margin-bottom: 40px;
     }
   }
-
-
 
   &__info-bar {
 

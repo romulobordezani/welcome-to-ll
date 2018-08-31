@@ -1,11 +1,13 @@
 .addresses-wrapper{
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
-  margin-top: 200px;
+  margin-top: 185px;
 
   @media (max-width: 420px) {
     flex-direction: column;
   }
+
 }
