@@ -7,6 +7,7 @@
   box-shadow: 0 4px 9px -1px rgba(0,0,0,0.53);
   background: #FFFFFF;
   font-size: 0.9em;
+  height: 100%;
 
   @media (max-width: 1024px) {
     width: 90%;
@@ -38,13 +39,10 @@
       position: absolute;
       right: 15px;
       top: 15px;
-      height: 30px;
-      width: 30px;
-      background: url("assets/close-icon.svg");
-      background-repeat: no-repeat;
-      background-size: 15px 15px;
-      background-position: center;
-      background-color: #f8f8f8;
+      height: 40px;
+      width: 40px;
+      background: #f8f8f8 url("assets/close-icon.svg") no-repeat center;
+      background-size: 20px 20px;
       border-radius: 50%;
       border: none;
       cursor: pointer;
@@ -55,6 +53,25 @@
 
   &__viewer {
     min-height: 260px;
+    height: 100%;
   }
 
+}
+
+.loading-map {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  &__loader{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    :global {
+      animation: spin 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+  }
 }

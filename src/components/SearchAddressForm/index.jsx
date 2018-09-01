@@ -38,7 +38,6 @@ class SearchAddressForm extends Component {
 
     if (isAValidCep) {
       searchAddressByCep(cep);
-      this.setState({ cep: '' });
       return true;
     }
 
@@ -65,11 +64,13 @@ class SearchAddressForm extends Component {
 
   render() {
     const { address } = this.props;
-    const { cep, error } = this.state;
+    const { cep, error, loading } = this.state;
 
     return (
       <form
-        className={`${styles['search-form']} ${error || address.errors.length > 0 ? styles['search-form--error'] : ''}`}
+        className={`${styles['search-form']}
+        ${error || address.errors.length > 0 ? styles['search-form--error'] : ''}
+        ${loading || address.loading ? styles['search-form--loading'] : ''}`}
         onSubmit={this.handleSearchAddressByCep}
       >
         <div className={styles['search-form__label']}>
@@ -81,13 +82,14 @@ class SearchAddressForm extends Component {
             id="cep"
             value={cep}
             type="tel"
-            placeholder="02050-010"
+            placeholder={`${address.loading ? 'Buscando...' : 'Ex. 02050-010'}`}
             onChange={this.updateCepInput}
             onBlur={this.clearErrors}
             onFocus={this.clearErrors}
             ref={this.cepRef}
             autoFocus
           />
+          <div className={`loading-circle ${styles['loading-circle']}`} />
           <div className={styles['search-form__alert-wrapper']}>
             {error && <div className={styles['search-form__input__error-label']}>{error.message}</div>}
             {address.errors.map(errorContainer => {
@@ -100,7 +102,7 @@ class SearchAddressForm extends Component {
           </div>
         </div>
         <div className={styles['search-form__submit-button']}>
-          <button type="submit" className="btn-mgl btn-green">
+          <button type="submit" className="btn-mgl btn-green" disabled={address.loading}>
             Buscar
           </button>
         </div>

@@ -36,7 +36,8 @@ const address = (state = initialState, action) => {
       return {
         ...state,
         list: state.list.filter(element => element !== action.address),
-        errors: []
+        errors: [],
+        loading: false
       };
     }
 
@@ -50,7 +51,8 @@ const address = (state = initialState, action) => {
     case RESET_ERRORS_ADDRESS: {
       return {
         ...state,
-        errors: []
+        errors: [],
+        loading: false
       };
     }
 
@@ -59,7 +61,8 @@ const address = (state = initialState, action) => {
       updatedErrorList.push(action.message);
       return {
         ...state,
-        errors: updatedErrorList
+        errors: updatedErrorList,
+        loading: false
       };
     }
 

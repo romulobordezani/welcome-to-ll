@@ -71,7 +71,13 @@ function* searchAddressByCep(action) {
 
     yield put({ type: ADD_ADDRESS, payload: addressWithGeo });
   } catch (error) {
-    const { message } = error;
+    let { message } = error;
+
+    // Sorry for this ugly way to catch viacep's network errors. The message from the server is wrong.
+    if (message.indexOf('JSONP request to') >= 0) {
+      message = 'Verifique sua conexão.';
+    }
+
     yield put({ type: NOT_FOUND_ADDRESS, message });
   }
 }

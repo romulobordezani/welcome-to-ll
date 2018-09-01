@@ -1,3 +1,4 @@
+
 .search-form {
 
   $formHeight: 100px;
@@ -31,6 +32,7 @@
   &__input {
     padding: 36px 6px 0;
     align-content: end;
+    position: relative;
     input{
       padding: 6px;
       outline: none;
@@ -50,6 +52,27 @@
     min-height: 30px;
   }
 
+  .loading-circle{
+    display: none;
+    position: absolute;
+    right: 9px;
+    top: 38px;
+    width: 21px;
+    height: 21px;
+    margin: 6px;
+    background: url("./assets/map-marker.svg");
+    background-size: contain;
+    :global {
+      animation: flip 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+  }
+
+  &--loading{
+    .loading-circle{
+      display: block;
+    }
+  }
+
   &--error{
     $errorColor: red;
     color: $errorColor;
@@ -59,4 +82,5 @@
   }
 
 }
+
 

@@ -3,11 +3,22 @@ import { withGoogleMap, GoogleMap, withScriptjs, Marker } from 'react-google-map
 import PropTypes from 'prop-types';
 import config from '../../config';
 
+import styles from './Address.scss';
+import greenMarker from './assets/map-marker.svg';
+
 const GOOGLE_MAPS_API_KEY = config.google.maps_key;
 
 const defaultMapOptions = {
   disableDefaultUI: true
 };
+
+function renderLoading() {
+  return (
+    <div className={styles['loading-map']} style={{ height: '260px' }}>
+      <div className={styles['loading-map__loader']} />
+    </div>
+  );
+}
 
 class GoogleMapViewer extends Component {
   constructor(props) {
@@ -22,8 +33,16 @@ class GoogleMapViewer extends Component {
           defaultCenter={{ lat: locale.lat, lng: locale.lng }}
           defaultZoom={13}
           defaultOptions={defaultMapOptions}
+          style={{ height: '100%' }}
         >
-          <Marker position={{ lat: locale.lat, lng: locale.lng }} />
+          <Marker
+            position={{ lat: locale.lat, lng: locale.lng }}
+            // eslint-disable-next-line
+            defaultAnimation={google.maps.Animation.DROP}
+            icon={{
+              url: greenMarker
+            }}
+          />
         </GoogleMap>
       ))
     );
@@ -33,7 +52,7 @@ class GoogleMapViewer extends Component {
         mapElement={<div style={{ height: '100%' }} />}
         isMarkerShown
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}`}
-        loadingElement={<div style={{ height: '100%' }} />}
+        loadingElement={renderLoading()}
       />
     );
   }

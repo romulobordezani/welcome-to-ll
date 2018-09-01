@@ -3,7 +3,7 @@
   "name": "Consulta de endereço",
   "description": "App para listar CEPs no Google maps.",
   "dir": "rtl",
-  "lang": "en-US",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "favicon.png",
