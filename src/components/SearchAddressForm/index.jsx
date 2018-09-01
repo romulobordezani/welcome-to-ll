@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import MaskedInput from 'react-text-mask';
 import { getOnlyDigits, validateCep, cepMask } from '../../helpers';
@@ -20,12 +21,27 @@ class SearchAddressForm extends Component {
     this.cepRef = React.createRef();
   }
 
+  componentWillReceiveProps(props) {
+    if (props.address.addedSuccessfully) {
+      this.blurCepField();
+      this.setState({
+        cep: ''
+      });
+    }
+  }
+
   setErrorState(errorMessage) {
     this.setState({
       error: {
         message: errorMessage
       }
     });
+  }
+
+  blurCepField() {
+    // Needed to close the cellphone keyboard after submit using it's enter key
+    // eslint-disable-next-line
+    findDOMNode(this.cepRef).blur();
   }
 
   handleSearchAddressByCep(event) {
@@ -86,7 +102,9 @@ class SearchAddressForm extends Component {
             onChange={this.updateCepInput}
             onBlur={this.clearErrors}
             onFocus={this.clearErrors}
-            ref={this.cepRef}
+            ref={input => {
+              this.cepRef = input;
+            }}
             autoFocus
           />
           <div className={`loading-circle ${styles['loading-circle']}`} />

@@ -18,7 +18,8 @@ const address = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        errors: []
+        errors: [],
+        addedSuccessfully: false
       };
     }
 
@@ -28,7 +29,8 @@ const address = (state = initialState, action) => {
       return {
         ...state,
         list: updatedAddressList,
-        loading: false
+        loading: false,
+        addedSuccessfully: true
       };
     }
 
@@ -44,7 +46,8 @@ const address = (state = initialState, action) => {
     case SEARCH_ADDRESS: {
       return {
         ...state,
-        errors: []
+        errors: [],
+        addedSuccessfully: false
       };
     }
 
@@ -52,7 +55,8 @@ const address = (state = initialState, action) => {
       return {
         ...state,
         errors: [],
-        loading: false
+        loading: false,
+        addedSuccessfully: false
       };
     }
 
@@ -62,7 +66,8 @@ const address = (state = initialState, action) => {
       return {
         ...state,
         errors: updatedErrorList,
-        loading: false
+        loading: false,
+        addedSuccessfully: false
       };
     }
 
