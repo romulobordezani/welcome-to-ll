@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SearchForm] Renders as the last snapshot 1`] = `
+<form
+  className="undefined
+        
+        "
+  onSubmit={[Function]}
+>
+  <div
+    className={undefined}
+  >
+    <label
+      htmlFor="cep"
+    >
+      CEP
+    </label>
+  </div>
+  <div
+    className={undefined}
+  >
+    <input
+      autoFocus={true}
+      id="cep"
+      mask={
+        Array [
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+          "-",
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+          /\\[0-9\\]/,
+        ]
+      }
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Ex. 02050-010"
+      type="tel"
+      value=""
+    />
+    <div
+      className="loading-circle undefined"
+    />
+    <div
+      className={undefined}
+    />
+  </div>
+  <div
+    className={undefined}
+  >
+    <button
+      className="btn-mgl btn-green"
+      disabled={undefined}
+      type="submit"
+    >
+      Buscar
+    </button>
+  </div>
+</form>
+`;

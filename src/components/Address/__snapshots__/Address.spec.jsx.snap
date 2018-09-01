@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Address] Renders as the last snapshot 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      Rua Meropé Dantas Magalhães
+    </div>
+    <div>
+      Parque Mandaqui
+    </div>
+    <div>
+      São Paulo
+       - 
+      SP
+    </div>
+    <div>
+      02418-150
+    </div>
+    <button
+      className={undefined}
+      onClick={[Function]}
+      type="button"
+    />
+  </div>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+      style={
+        Object {
+          "height": "260px",
+        }
+      }
+    >
+      <div
+        className={undefined}
+      />
+    </div>
+  </div>
+</div>
+`;

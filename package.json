@@ -55,6 +55,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.4.2",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^2.4.0",
     "redux": "^4.0.0",
@@ -82,10 +83,17 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.{js,jsx,mjs}",
+      "!src/registerServiceWorker.js",
+      "!src/index.jsx",
+      "!src/reducers/**/*.{js,jsx,mjs}",
+      "!src/middlewares/**/*.{js,jsx,mjs}",
+      "!src/sagas/**/*.{js,jsx,mjs}",
+      "!src/routes.jsx"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "jest-localstorage-mock"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -121,5 +129,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "jest-localstorage-mock": "^2.2.0"
   }
 }

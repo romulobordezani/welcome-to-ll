@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Header] Renders as the last snapshot 1`] = `
+<header
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <img
+      alt="Consulta de endereço"
+      src="logo.png"
+    />
+  </div>
+  <div
+    className={undefined}
+  >
+    Consulta de endereço
+  </div>
+</header>
+`;

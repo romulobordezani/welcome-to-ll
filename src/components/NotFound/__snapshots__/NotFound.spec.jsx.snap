@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[NotFound] Renders as the last snapshot 1`] = `
+<div
+  className={undefined}
+>
+  <img
+    alt="Not Found"
+    className={undefined}
+    src="notfound.png"
+  />
+  <h1>
+    404
+  </h1>
+  <p>
+     Ooops. This page isn't available, but I'm...
+  </p>
+  <p>
+    Please, hire me 
+    <img
+      alt="Smile"
+      className={undefined}
+      src="smiling-face.png"
+    />
+  </p>
+</div>
+`;

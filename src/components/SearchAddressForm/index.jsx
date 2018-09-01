@@ -136,5 +136,3 @@ SearchAddressForm.propTypes = {
 };
 
 export default SearchAddressForm;
-
-// TODO > Add at least SnapShoting tests with Jest

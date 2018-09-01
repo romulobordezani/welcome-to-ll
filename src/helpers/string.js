@@ -1,8 +1,11 @@
 export default function getOnlyDigits(string) {
   if (string) {
     const numberPattern = /\d+/g;
-    return string.match(numberPattern).join([]);
+    const numbersArray = string.match(numberPattern);
+    if (numbersArray === null) {
+      return '';
+    }
+    return numbersArray.join([]);
   }
-  return null;
+  return '';
 }
-// TODO Add unit test for it
