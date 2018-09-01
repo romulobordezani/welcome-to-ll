@@ -1,10 +1,10 @@
 ![](public/android-chrome-192x192.png?raw=true)
 
-Welcome to L.L. is a simple code test to list CEPs (Brazilian Zipcodes) in a map using React, Redux and Google Maps.
+**Welcome to L.L**. is a simple code test to list CEPs (Brazilian Zipcodes) in a map using React, Redux and Google Maps.
 
 Live version available at: https://romulobordezani.github.io/welcome-to-ll/
  
-Please, take a shot of this app over a Mobile Phone with Chrome and add it to your Home screen.
+Please, take a shot of this PWA over a Mobile Phone with Chrome and add it to your Home screen.
 
 # Achieved Features
 - **Progressive Web App**
