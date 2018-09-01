@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import { Router } from 'react-router-dom';
+import sessionStoragePersistance from './middlewares/sessionStoragePersistance';
 import Routes from './routes';
 import reducers from './reducers';
 import cepSearchSaga from './sagas';
@@ -17,7 +18,7 @@ import './assets/styles/index.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)));
+const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware, sessionStoragePersistance)));
 const history = createBrowserHistory();
 
 sagaMiddleware.run(cepSearchSaga);

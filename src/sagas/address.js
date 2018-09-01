@@ -4,7 +4,15 @@ import fetchJsonp from 'fetch-jsonp';
 import { getOnlyDigits } from '../helpers';
 import config from '../config';
 
-import { ADD_ADDRESS, SEARCH_ADDRESS, NOT_FOUND_ADDRESS, LOADING_ADDRESS } from '../constants/actionTypes';
+import {
+  ADD_ADDRESS,
+  ADDED_ADDRESS,
+  SEARCH_ADDRESS,
+  NOT_FOUND_ADDRESS,
+  LOADING_ADDRESS,
+  REMOVE_ADDRESS,
+  REMOVED_ADDRESS
+} from '../constants/actionTypes';
 
 const GOOGLE_MAPS_API_KEY = config.google.maps_key;
 
@@ -70,6 +78,7 @@ function* searchAddressByCep(action) {
     const addressWithGeo = addGeoInformationToAddress(addressWithoutGeo, geoInfoFromGoogle);
 
     yield put({ type: ADD_ADDRESS, payload: addressWithGeo });
+    yield put({ type: ADDED_ADDRESS });
   } catch (error) {
     let { message } = error;
 
@@ -82,6 +91,11 @@ function* searchAddressByCep(action) {
   }
 }
 
+function* removeAddress() {
+  yield put({ type: REMOVED_ADDRESS });
+}
+
 export default function* watcherSaga() {
   yield takeLatest(SEARCH_ADDRESS, searchAddressByCep);
+  yield takeLatest(REMOVE_ADDRESS, removeAddress);
 }

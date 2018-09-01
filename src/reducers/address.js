@@ -1,14 +1,19 @@
 import {
   ADD_ADDRESS,
+  ADDED_ADDRESS,
   REMOVE_ADDRESS,
   NOT_FOUND_ADDRESS,
   LOADING_ADDRESS,
   SEARCH_ADDRESS,
-  RESET_ERRORS_ADDRESS
+  RESET_ERRORS_ADDRESS,
+  REMOVED_ADDRESS
 } from '../constants/actionTypes';
 
+// /* eslint-env browser */
+const persistedAddressList = JSON.parse(localStorage.getItem('cep_list'));
+
 const initialState = {
-  list: [],
+  list: persistedAddressList || [],
   errors: []
 };
 
@@ -30,7 +35,20 @@ const address = (state = initialState, action) => {
         ...state,
         list: updatedAddressList,
         loading: false,
+        addedSuccessfully: false
+      };
+    }
+
+    case ADDED_ADDRESS: {
+      return {
+        ...state,
         addedSuccessfully: true
+      };
+    }
+
+    case REMOVED_ADDRESS: {
+      return {
+        ...state
       };
     }
 
