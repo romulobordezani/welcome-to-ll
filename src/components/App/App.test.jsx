@@ -1,7 +1,8 @@
+// /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './index.container';
 import { createStore } from 'redux';
+import App from './index.container';
 import combinedReducers from '../../reducers';
 
 describe('[App]', () => {

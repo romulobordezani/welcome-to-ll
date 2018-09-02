@@ -1,54 +1,72 @@
 ![](public/android-chrome-192x192.png?raw=true)
 
-**Welcome to L.L**. is a simple code test to list CEPs (Brazilian Zipcodes) in a map using React, Redux and Google Maps.
+[READ-ME](README-EN.md) in english.
 
-Live version available at: https://romulobordezani.github.io/welcome-to-ll/
+**Bem vindo ao L.L**. é um simples teste de código que lista CEPs num Mapa do Google usando React, Redux e serviços Jsonp.
+
+Disponível em: https://romulobordezani.github.io/welcome-to-ll/
  
-Please, take a shot of this PWA over a Mobile Phone with Chrome and add it to your Home screen.
+Por favor, experimente também num celular usando o Chrome para conferir as funcionalidades de PWA adicionadas.
 
-# Achieved Features
+# Funcionalidades
 - **Progressive Web App**
-- It saves your last searchs on localStorage
-- Animated 
-- Responsive
-- Using Function Generators to async requests
-- SASS with BEM over styles
-- Doesn't use Material-ui library in order to make it lighter
-- Input Masks to prevent mistakes while typing a CEP
-- Airbnb and Prettier as code stylers (with rules to prevent a war between them)
+- Modo Offline 
+- Salva as últimas buscas no localStorage
+- Animado 
+- Responsivo
+- Usa Function Generators* nas requisições assíncronas
+- SASS, BEM e Flex Box para formatar
+- Normalizado com Normalize.css
+- Não usa material-ui para deixar o app mais leve
+- Campos de texto com máscaras para prevenir erros ao digitar CEPs
+- Airbnb e Prettier para garantir a qualidade do código (com regras para fazê-los coexistirem sem conflitos)
 - Snapshots testing
+- Deploy usando gh-pages
 
-# What I would still like to do, but I'm out of time
-- Add Docker and CI CD with gitlab, delivering in an AWS instance
-- Server Side Render using [Next.js](https://nextjs.org/)
-- A **Back-end For Front-end** middleware using Node.js and Express, serving in a GraphQL way
-- Server responses mocks using [fetch-mock](https://www.npmjs.com/package/fetch-mock) a get a higher coverage
-- Enhance Jest with Enzyme to get a higher coverage and user's event simulations
+# O que ainda gostaria de fazer, porém, não há tempo suficiente
+- Adicionar Docker e CI CD via gitlab, entregando numa instância de AWS
+- Server Side Render usando [Next.js](https://nextjs.org/)
+- Um **Back-end For Front-end** middleware usando Node.js e Express, capaz de servir usando GraphQL
+- Mockar as requests usando [fetch-mock](https://www.npmjs.com/package/fetch-mock) pra conseguir uma cobertura de testes maior
+- Aprimorar o Jest com o Enzyme pra conseguir uma cobertura de testes maior usando simulações de eventos de usuário
 
-# How to Install
+# Como Instalar
 ```bash
 yarn install
 ```
 
 
-# How to run
+# Como rodar
 ```bash
 yarn start
 ```
 
-You can access it locally at: [http://localhost:3000/](http://localhost:3000/)
+Pode acessar localmente em: [http://localhost:3000/](http://localhost:3000/)
 
 
-# How to Test
+# Como testar
 ```bash
 yarn test
 ```
+Nota: em Macs, talvez seja necessário atualizar o watchman para suportar o Jest mais recente.
+```bash
+brew install watchman
+```
 
-# How to Deploy
+# Como rodar apenas o es-lint
+```bash
+yarn run lint
+```
+
+# Como corrigir o código automaticamente via prettier 
+```bash
+yarn run prettify
+```
+
+# Como fazer deploy no Google Pages
 ```bash
 yarn run deploy
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and the original Read-me file was kept as [CRA_README.md](CRA_README.md)
+Esse projeto partiu do [Create React App](https://github.com/facebookincubator/create-react-app) e o arquivo original de instruções do CRA foi mantido em [CRA_README.md](CRA_README.md)
 
-Important note: Please, hire me. 

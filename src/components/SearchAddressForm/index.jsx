@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MaskedInput from 'react-text-mask';
 import { getOnlyDigits, validateCep, cepMask } from '../../helpers';
 
-import styles from './SearchFormAddress.scss';
+import styles from './SearchAddressForm.scss';
 
 class SearchAddressForm extends Component {
   constructor(props) {

@@ -1,5 +1,4 @@
 export default function validateCep(string) {
-  console.log('called', string);
   const cepRegex = /^[0-9]{8}$/;
   if (string && cepRegex.test(string)) {
     return { result: true, message: 'Válido.' };

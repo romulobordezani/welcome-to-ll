@@ -19,7 +19,7 @@ exports[`[SearchForm] Renders as the last snapshot 1`] = `
   <div
     className={undefined}
   >
-    <input
+    <mockFakeMaskInput
       autoFocus={true}
       id="cep"
       mask={

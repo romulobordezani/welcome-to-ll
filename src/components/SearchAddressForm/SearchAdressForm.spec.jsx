@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import SearchForm from './index';
+import SearchForm from './index.jsx';
 
 const addressMock = {
   'cep':'02418-150',
@@ -21,7 +21,21 @@ const addressStateMock = {
   errors: []
 };
 
-jest.mock('react-text-mask', () => props => <input type="text" {...{ ...props }} />);
+class mockFakeMaskInput extends React.Component {
+  constructor(props) {
+    super(...props);
+  }
+
+  render() {
+    return(
+      <div ref={input => { this.cepRef = input; }}  {...{ ...props }}>
+        <input type="text" />
+      </div>
+    )
+  }
+}
+
+jest.mock('react-text-mask', () => 'mockFakeMaskInput');
 
 describe('[SearchForm]', () => {
   it('Renders as the last snapshot', () => {
@@ -34,5 +48,3 @@ describe('[SearchForm]', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-
-
