@@ -1,6 +1,6 @@
 {
-  "short_name": "Consulta de endereço",
-  "name": "Consulta de endereço",
+  "short_name": "Busca CEP",
+  "name": "Busca CEP",
   "description": "App para listar CEPs no Google maps.",
   "dir": "rtl",
   "lang": "pt-BR",
