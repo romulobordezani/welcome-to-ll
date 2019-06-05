@@ -98,7 +98,7 @@ class SearchAddressForm extends Component {
             id="cep"
             value={cep}
             type="tel"
-            placeholder={`${address.loading ? 'Buscando...' : 'Ex. 02050-010'}`}
+            placeholder={`${address.loading ? 'Buscando...' : '02050-010'}`}
             onChange={this.updateCepInput}
             onBlur={this.clearErrors}
             onFocus={this.clearErrors}

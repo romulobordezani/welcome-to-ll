@@ -1,4 +1,3 @@
-
 .search-form {
 
   $formHeight: 100px;
@@ -34,8 +33,7 @@
     align-content: end;
     position: relative;
     input{
-      padding: 6px;
-      outline: none;
+      width: 110px;
     }
   }
 
@@ -44,6 +42,7 @@
     align-content: center;
     button {
       outline: none;
+      width: 100px;
     }
   }
 

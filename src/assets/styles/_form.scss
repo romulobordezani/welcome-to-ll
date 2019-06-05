@@ -1,3 +1,5 @@
+@import "colors";
+
 .btn-mgl{
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -16,31 +18,53 @@
   text-transform: uppercase;
 
   &.btn-green{
-    background: #76d519;
-    color: #fff;
+    background: $mgl_green;
+    color: $paper_white;
   }
 }
 
-input{
+input {
   border-radius: 4px;
-  border: 1px solid #e5e5e5;
   padding: 6px;
   height: 26px;
-  font-size: 1.4em;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid $shadow_grey;
+  font-family: sans-serif;
+  -webkit-appearance: none;
+  transition: box-shadow 300ms;
+  &:focus {
+    outline: none;
+    box-shadow: 0.2em 0.8em 1.6em $light-grey;
+  }
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #bcbcbc;
+  color: $light_grey;
   opacity: 1;
-  font-size: 1.1em;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #bcbcbc;
-  font-size: 1.1em;
+  color: $light_grey;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #bcbcbc;
-  font-size: 1.1em;
+  color: $light_grey;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  color: $light_grey;
+  -webkit-text-fill-color: $black;
+  -webkit-box-shadow: 0 0 0px 1000px $paper_white inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-family: sans-serif;
 }

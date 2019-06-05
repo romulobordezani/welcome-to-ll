@@ -1,6 +1,10 @@
+@import "../../assets/styles/colors";
+
 .not-found-wrapper {
   padding: 20px;
-  color: #8e8e8e;
+  color: $grey;
+  max-width: 320px;
+  margin: 0 auto;
   &__icon {
     width: 100%;
     height: auto;
